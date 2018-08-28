@@ -1,6 +1,6 @@
 package com.example.cburkhar.riskroll
 
-import org.junit.Test
+import org.junit.Test;
 
 import org.junit.Assert.*
 

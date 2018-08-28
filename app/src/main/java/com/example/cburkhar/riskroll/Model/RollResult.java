@@ -30,15 +30,18 @@ public class RollResult {
         lmAttackResult = new ArrayList<>();
         lmDefendResult = new ArrayList<>();
 
-        Log.d("adding attack", "Attack");
+
+        System.out.print("\n Adding attack");
+
+
         this.addRoll(Attack, lmAttackResult);
-        Log.d("adding defend", "Defend");
+        System.out.print("\n adding defend");
         this.addRoll(Defend, lmDefendResult);
 
         for (Integer r : lmAttackResult
                 ) {
 
-            Log.d("verify defend", r.toString());
+            System.out.print("\n Verify attack result" + r.toString());
         }
         
 
@@ -48,8 +51,8 @@ public class RollResult {
     private void addRoll(Integer count, List<Integer> container)
     {
         for (int i = 0; i < count; i++) {
-            lmAttackResult.add(Roll());
-            Log.d("Roll", lmAttackResult.get(i).toString());
+            container.add(Roll());
+            System.out.print(container.get(i).toString());
         }
     }
     
@@ -58,7 +61,7 @@ public class RollResult {
         return generateRandomIntIntRange(1,6);
     }
 
-    public static int generateRandomIntIntRange(int min, int max) {
+    private static int generateRandomIntIntRange(int min, int max) {
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
